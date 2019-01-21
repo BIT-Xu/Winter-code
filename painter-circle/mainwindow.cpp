@@ -34,6 +34,11 @@ MainWindow::MainWindow(QWidget *parent) :
     label_1->setText("半径");
     label_1->setGeometry(50,30,50,50);
 
+    dialog_1=new Dialog(this);
+    dialog_2=new Dialog2(this);
+
+    form_1=new Form(this);
+
     connect(button_1, SIGNAL(clicked(bool)), this, SLOT(paint_1()));
     connect(button_2, SIGNAL(clicked(bool)), this, SLOT(paint_2()));
 }
@@ -72,7 +77,7 @@ void MainWindow::paintEvent(QPaintEvent *)
     painter.setPen(pen); // 设置画笔
 
     for (int i = 0;i<current_num;i++){
-        painter.drawPoint(pointff[i].x(),pointff[i].y());
+       painter.drawPoint(pointff[i].x(),pointff[i].y());
     }
 
     return ;
@@ -80,6 +85,8 @@ void MainWindow::paintEvent(QPaintEvent *)
 
 void MainWindow::paint_1()
 {
+    dialog_1->show();
+
     Calculation();
     current_num=count;
     update();
@@ -87,6 +94,9 @@ void MainWindow::paint_1()
 
 void MainWindow::paint_2()
 {
+   dialog_2->show();
+
+
     Calculation();
     current_num=0;
 

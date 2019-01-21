@@ -8,6 +8,9 @@
 #include <QPushButton>
 #include <QLabel>
 #include <QPointF>
+#include <dialog_1.h>
+#include <form.h>
+#include <dialog2.h>
 
 
 namespace Ui {
@@ -40,8 +43,13 @@ private:
     QPushButton* button_2;
     QLabel* label_1;
 
+    Dialog* dialog_1;
+    Form* form_1;
+    Dialog2* dialog_2;
+
+
     QTimer* timer;
-public:
+private:
     int count=0;
     int current_num;
     int r;
